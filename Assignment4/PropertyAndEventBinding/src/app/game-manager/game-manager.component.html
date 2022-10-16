@@ -1,0 +1,18 @@
+<app-game-control (gameStartEmitter)="manage($event)"></app-game-control>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>Components List</h3>
+        </div>
+        <hr>
+    </div>
+    <div class="row">
+        <div *ngFor="let num of container">
+            <app-even *ngIf="num%2==0; else odd" [number]="num"></app-even>
+            <ng-template #odd>
+                <app-odd [number]="num"></app-odd>
+            </ng-template>
+        </div>
+    </div>
+</div>
